@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-import 'CountryList.dart';
+import 'GamesList.dart';
 
 class HomePageView extends StatefulWidget {
   @override

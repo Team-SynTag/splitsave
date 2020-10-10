@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:split_save/Widgets/UnderlineContainer.dart';
 import 'LoginPage.dart';
 import 'TextEnteringModule.dart';
 
@@ -16,10 +17,11 @@ class _CreateAccountState extends State<CreateAccount> {
         body: SafeArea(
           child: Container(
               decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: new AssetImage('assets/images/BackgroundLogin.png'),
-                      fit: BoxFit.cover,
-                  )
+                  //image: DecorationImage(
+                    //image: new AssetImage('assets/images/BackgroundLogin.png'),
+                      //fit: BoxFit.cover,
+                  //)
+                color: Color(0xFFF9F9F9)
               ),
             child:  Padding(
               padding: const EdgeInsets.only(left: 10.0,right: 10.0,top: 10.0,bottom: 0.0),
@@ -34,12 +36,14 @@ class _CreateAccountState extends State<CreateAccount> {
                     alignment: Alignment.center,
                     child: Text("Create Account",
                       style: TextStyle(
-                        color: Color(0xFFF38000),
+                        color: Color(0xFF121212),
                         fontSize: MediaQuery.of(context).size.width*.09,
-                        fontFamily: 'PoppinsMed',
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.w500
                       ),
                     ),
                   ),
+                  Underline(MediaQuery.of(context).size.width*.63),
                   SizedBox(height: MediaQuery.of(context).size.height*.029,),
                   Container(
                     width: MediaQuery.of(context).size.width,

@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:split_save/Widgets/UnderlineContainer.dart';
 import 'package:split_save/Home/HomePage.dart';
 import 'package:split_save/Login/ForgotPassword.dart';
 import 'package:split_save/Login/TextEnteringModule.dart';
@@ -37,20 +38,13 @@ class _LoginPageState extends State<LoginPage> {
                     child: Text("Login",
                     style: TextStyle(
                       color: Color(0xFF121212),
-                      fontSize: 50.0,
+                      fontSize: 45.0,
                       fontFamily: 'Inter',
                       fontWeight: FontWeight.w500
                     ),
                     ),
                   ),
-                  Container(
-                    height: MediaQuery.of(context).size.height*.01,
-                    width: MediaQuery.of(context).size.width*.37,
-                    decoration: BoxDecoration(
-                      color: Color(0xFFFFD622),
-                      borderRadius: BorderRadius.circular(20)
-                    ),
-                  ),
+                  Underline(MediaQuery.of(context).size.width*.31),  //Underline Container
                   SizedBox(height: MediaQuery.of(context).size.height*.029,),
 
                   Container(
@@ -71,7 +65,7 @@ class _LoginPageState extends State<LoginPage> {
                                   BoxShadow(
                                     color: Color(0xFF000000).withAlpha(40),
                                     blurRadius: 10.0,
-                                    offset: Offset(0.0,0.5)
+                                    offset: Offset(0.0,10.0)
                                   )
                                 ]
                               ),

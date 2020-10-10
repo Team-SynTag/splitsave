@@ -17,10 +17,11 @@ class _LoginPageState extends State<LoginPage> {
         body: SafeArea(
           child: Container(
             decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: new AssetImage('assets/images/BackgroundLogin.png'),
-                  fit: BoxFit.fill,
-                )
+                //image: DecorationImage(
+                  //image: new AssetImage('assets/images/BackgroundLogin.png'),
+                  //fit: BoxFit.fill,
+                //),
+              color: Color(0xFFE5E5E5)
             ),
             child: Padding(
               padding: const EdgeInsets.only(left: 10.0,right: 10.0,top: 10.0,bottom: 0.0),
@@ -35,13 +36,21 @@ class _LoginPageState extends State<LoginPage> {
                     alignment: Alignment.center,
                     child: Text("Login",
                     style: TextStyle(
-                      color: Color(0xFFF38000),
+                      color: Color(0xFF121212),
                       fontSize: 50.0,
                       fontFamily: 'PoppinsMed',
                     ),
                     ),
                   ),
+                  Container(
+                    height: MediaQuery.of(context).size.height*.01,
+                    width: MediaQuery.of(context).size.width*.4,
+                    decoration: BoxDecoration(
+                      color: Color(0xFFFFD622)
+                    ),
+                  ),
                   SizedBox(height: MediaQuery.of(context).size.height*.029,),
+
                   Container(
                     width: MediaQuery.of(context).size.width,
                     height: MediaQuery.of(context).size.height*.65,
@@ -52,9 +61,9 @@ class _LoginPageState extends State<LoginPage> {
                           left: MediaQuery.of(context).size.width*.05,
                           child: Container(
                               width: MediaQuery.of(context).size.width*.84,
-                              height: MediaQuery.of(context).size.height*.38,
+                              height: MediaQuery.of(context).size.height*.34,
                               decoration: BoxDecoration(
-                                color: Colors.white,
+                                color: Color(0xFFF9F9F9),
                                 borderRadius: BorderRadius.all(Radius.circular(10.0)),
                                 boxShadow: <BoxShadow>[
                                   BoxShadow(
@@ -101,14 +110,14 @@ class _LoginPageState extends State<LoginPage> {
 
                         ),
                         Positioned(
-                          top: MediaQuery.of(context).size.height*.35,
+                          top: MediaQuery.of(context).size.height*.42,
                           left: MediaQuery.of(context).size.width*.225,
                           child: Container(
                             width: MediaQuery.of(context).size.width*.45,
                             height: MediaQuery.of(context).size.height*.075,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.all(Radius.circular(50.0)),
-                              color: Color(0xFFF38000)
+                              color: Color(0xFF70D93F)
                             ),
                             child: FlatButton(
                               onPressed: (){

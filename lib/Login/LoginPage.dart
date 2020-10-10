@@ -21,7 +21,7 @@ class _LoginPageState extends State<LoginPage> {
                   //image: new AssetImage('assets/images/BackgroundLogin.png'),
                   //fit: BoxFit.fill,
                 //),
-              color: Color(0xFFE5E5E5)
+              color: Color(0xFFF9F9F9)
             ),
             child: Padding(
               padding: const EdgeInsets.only(left: 10.0,right: 10.0,top: 10.0,bottom: 0.0),
@@ -38,15 +38,17 @@ class _LoginPageState extends State<LoginPage> {
                     style: TextStyle(
                       color: Color(0xFF121212),
                       fontSize: 50.0,
-                      fontFamily: 'PoppinsMed',
+                      fontFamily: 'Inter',
+                      fontWeight: FontWeight.w500
                     ),
                     ),
                   ),
                   Container(
                     height: MediaQuery.of(context).size.height*.01,
-                    width: MediaQuery.of(context).size.width*.4,
+                    width: MediaQuery.of(context).size.width*.37,
                     decoration: BoxDecoration(
-                      color: Color(0xFFFFD622)
+                      color: Color(0xFFFFD622),
+                      borderRadius: BorderRadius.circular(20)
                     ),
                   ),
                   SizedBox(height: MediaQuery.of(context).size.height*.029,),
@@ -68,7 +70,8 @@ class _LoginPageState extends State<LoginPage> {
                                 boxShadow: <BoxShadow>[
                                   BoxShadow(
                                     color: Color(0xFF000000).withAlpha(40),
-                                    blurRadius: 20.0
+                                    blurRadius: 10.0,
+                                    offset: Offset(0.0,0.5)
                                   )
                                 ]
                               ),
@@ -130,7 +133,8 @@ class _LoginPageState extends State<LoginPage> {
                                 child: Text('Login',style:
                                 TextStyle(
                                     color: Color(0xFFFFFFFF),
-                                    fontFamily: 'PoppinsMed',
+                                    fontFamily: 'Inter',
+                                    fontWeight: FontWeight.w700,
                                     fontSize: 22.0
                                 )
                                   ,),

@@ -26,13 +26,14 @@ class _LoginProcess1State extends State<LoginProcess1> {
             child: Stack(
               children:<Widget>[
                 Positioned(
-                    top: MediaQuery.of(context).size.height*.11,
+                    top: MediaQuery.of(context).size.height*.1,
                     child: Container(
                     child: Text("splitsave",
                       style: TextStyle(
                         color: Colors.white,
+                        fontFamily: 'Inter',
                         fontWeight: FontWeight.w700,
-                        fontSize: 45
+                        fontSize: 50
                       ),
                     ),
                 )),

@@ -15,10 +15,10 @@ class _ForgotPasswordState extends State<ForgotPassword> {
         body: SafeArea(
           child: Container(
             decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: new AssetImage('assets/images/BackgroundLogin.png'),
-                  fit: BoxFit.fill,
-                )
+                //image: DecorationImage(
+                  //image: new AssetImage('assets/images/BackgroundLogin.png'),
+                  //fit: BoxFit.fill,
+                //)
             ),
             child: Padding(
               padding: const EdgeInsets.only(left: 10.0,right: 10.0,top: 10.0,bottom: 0.0),
@@ -33,7 +33,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                     alignment: Alignment.center,
                     child: Text("Forgot Password",
                       style: TextStyle(
-                        color: Color(0xFFF38000),
+                        color: Color(0xFF121212),
                         fontSize: MediaQuery.of(context).size.width*.09,
                         fontFamily: 'PoppinsMed',
                       ),
@@ -78,14 +78,14 @@ class _ForgotPasswordState extends State<ForgotPassword> {
 
                         ),
                         Positioned(
-                          top: MediaQuery.of(context).size.height*.175,
+                          top: MediaQuery.of(context).size.height*.25,
                           left: MediaQuery.of(context).size.width*.225,
                           child: Container(
                             width: MediaQuery.of(context).size.width*.45,
                             height: MediaQuery.of(context).size.height*.075,
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.all(Radius.circular(50.0)),
-                                color: Color(0xFFF38000)
+                                color: Color(0xFF79D30F)
                             ),
                             child: FlatButton(
                               onPressed: (){

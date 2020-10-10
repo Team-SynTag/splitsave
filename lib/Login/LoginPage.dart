@@ -87,13 +87,11 @@ class _LoginPageState extends State<LoginPage> {
                                       TextSpan(
                                         text: "Forgot Password?",style: TextStyle(
                                         fontFamily: 'Poppins',
-                                        color: Colors.grey
+                                        color: Colors.blue
                                       ),
                                         recognizer: TapGestureRecognizer()
                                           ..onTap=(){
-                                          Navigator.of(context).push(MaterialPageRoute(
-                                            builder: (context){return ForgotPassword();}
-                                          ));
+
                                           }
                                       )
                                     )

@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'BookmarksView.dart';
-import 'CategoryView.dart';
-import 'HomeVIew.dart';
-import 'UserView.dart';
+import 'package:split_save/Widgets/UnderlineContainer.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -11,121 +8,59 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
 
-  PageController _myPage = PageController(initialPage: 0);
-  Color _changedColor =Color(0xFF463EC9);
-  Color _changedColor2 =Colors.black;
-  Color _changedColor3 =Colors.black;
-  Color _changedColor4 =Colors.black;
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      resizeToAvoidBottomInset: false,
-      backgroundColor: Colors.white,
-      bottomNavigationBar: BottomAppBar(
-        color: Color(0xFFF2F2F2),
-        child: Padding(
-          padding: const EdgeInsets.only(left: 10.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: <Widget>[
-              //We shall add two IconButtons here
-              IconButton(
-                  icon: ImageIcon(AssetImage('assets/images/homeicon.png'),
-                    color: _changedColor,
-                    size: 30.0,
+    return SafeArea(
+      child: Scaffold(
+          body: Container(
+            child: Padding(
+              padding:  EdgeInsets.only(left: MediaQuery.of(context).size.width*.12,right: MediaQuery.of(context).size.width*.04),
+              child: Column(
+                children: <Widget>[
+                  SizedBox(height: MediaQuery.of(context).size.height*.1,),
+                  Align(
+                    alignment: Alignment.topLeft,
+                    child: Text("DashBoard",
+                    style: TextStyle(
+                      fontFamily: "Inter",
+                      //fontWeight: FontWeight.w500,
+                      fontSize: 34
+                    ),
+                    ),
                   ),
-                  onPressed: (){
-                    setState(() {
-                      _myPage.jumpToPage(0);
-                      _changedColor = Color(0xFF463EC9);
-                      _changedColor4 = Colors.black;
-                      _changedColor2 = Colors.black;
-                      _changedColor3 = Colors.black;
-                    });
-                  }
+                  Align(
+                    alignment: Alignment.topLeft,
+                      child: Underline(MediaQuery.of(context).size.width*.43)),
+                  SizedBox(height: MediaQuery.of(context).size.height*.04,),
+                  Container(
+                    width: MediaQuery.of(context).size.width*.88,
+                    height: MediaQuery.of(context).size.height*.66,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage(
+                          "assets/images/NoGames.png"
+                        )
+                      )
+                    ),
+                  )
+                ],
               ),
-              SizedBox(
-                width: MediaQuery.of(context).size.width * .1,
-              ),
-              IconButton(
-                  icon: ImageIcon(
-                    AssetImage('assets/images/Category.png'),
-                    color: _changedColor2,
-                  ),
-                  onPressed: () {setState(() {
-                    _changedColor2 = Color(0xFF463EC9);
-                    _changedColor4 = Colors.black;
-                    _changedColor = Colors.black;
-                    _changedColor3 = Colors.black;
-                    _myPage.jumpToPage(1);
+            ),
+          ),
+        resizeToAvoidBottomInset: false,
+        floatingActionButton: Container(
+          height: 60,
+          width: 60,
+          child: FloatingActionButton(
+            onPressed: () {},
+            splashColor: Colors.green,
 
-                  });}),
-              SizedBox(
-                width: MediaQuery.of(context).size.width * .25,
-              ),
-              IconButton(
-                  icon: ImageIcon(AssetImage('assets/images/bookmark.png'),
-                      color: _changedColor3),
-                  onPressed: () {setState(() {
-                    _myPage.jumpToPage(2);
-                    _changedColor3 = Color(0xFF463EC9);
-                    _changedColor4 = Colors.black;
-                    _changedColor2 = Colors.black;
-                    _changedColor = Colors.black;
-                  });}),
-              SizedBox(
-                width: MediaQuery.of(context).size.width * .1,
-              ),
-              IconButton(
-                  icon: ImageIcon(AssetImage('assets/images/user2.png'),
-                      color: _changedColor4),
-                  onPressed: () {setState(() {
-                    _myPage.jumpToPage(3);
-                    _changedColor = Colors.black;
-                    _changedColor2 = Colors.black;
-                    _changedColor3 = Colors.black;
-                    _changedColor4 = Color(0xFF463EC9);
-                  });}),
-            ],
+            backgroundColor: Color(0xFF70D93F),
+            child: Image.asset('assets/images/addicon.png'),
           ),
         ),
-        shape: CircularNotchedRectangle(),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       ),
-      body: SafeArea(
-        child: PageView(
-          controller: _myPage,
-          children: <Widget>[
-
-               Center(
-                child: HomePageView(),
-              ),
-
-            Center(
-              child: Container(
-                child: Category(),
-              ),
-            ),
-            Center(
-              child: Container(
-                child:Bookmark(),
-              ),
-            ),
-            Center(
-              child: Container(
-                child: User(),
-              ),
-            )
-          ],
-          physics: NeverScrollableScrollPhysics(), // Comment this if you need to use Swipe.
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        backgroundColor: Color(0xFFF38000),
-        child: Image.asset('assets/images/addicon.png'),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }

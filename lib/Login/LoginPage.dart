@@ -18,10 +18,9 @@ class _LoginPageState extends State<LoginPage> {
         body: SafeArea(
           child: Container(
             decoration: BoxDecoration(
-                //image: DecorationImage(
-                  //image: new AssetImage('assets/images/BackgroundLogin.png'),
-                  //fit: BoxFit.fill,
-                //),
+                image: DecorationImage(
+                  image: new AssetImage('assets/images/Frame.png'),
+                ),
               color: Color(0xFFF9F9F9)
             ),
             child: Padding(

@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:split_save/Login/LoginProcess.dart';
 import 'package:flutter/services.dart';
 import 'package:split_save/StartAppPages/StartPages.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(MyApp());
 }
 

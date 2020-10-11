@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:dots_indicator/dots_indicator.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:split_save/Login/LoginProcess.dart';
 import 'package:split_save/Widgets/SlideScreen.dart';
 import 'package:split_save/Widgets/SlidingDots.dart';
@@ -22,7 +23,6 @@ class _StartingPagesState extends State<StartingPages> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     Timer.periodic(Duration(seconds: 5),(Timer timer){
       if(_currentPage<2){
@@ -53,6 +53,9 @@ class _StartingPagesState extends State<StartingPages> {
 
   @override
   Widget build(BuildContext context) {
+
+    ScreenUtil.init(context, designSize: Size(750, 1334), allowFontScaling: true);
+
     return SafeArea(
         child: Scaffold(
           body: Column(
@@ -91,7 +94,7 @@ class _StartingPagesState extends State<StartingPages> {
                 ]),
               ),
               Padding(
-                padding: const EdgeInsets.only(bottom: 10),
+                padding: EdgeInsets.only(bottom: ScreenUtil().screenHeight*.02),
                 child: Container(
                   width: MediaQuery.of(context).size.width*.6,
                   height: MediaQuery.of(context).size.height*.07,
